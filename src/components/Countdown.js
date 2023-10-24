@@ -38,16 +38,18 @@ const Countdown = ({birthday}) => {
   return (
     <div className='flex w-full h-64 justify-center items-center bg-pink-200'>
       <h2>Days</h2>
-      <h1>{days}</h1>
+     
+      {days < 10 ? <p>0{days}</p> : <p>{days}</p> }
       <span>: </span>
       <h2>Hours</h2>
-      <h1>{hours}</h1>
+      {hours < 10 ? <h1>0{hours}</h1> : <h1>{hours}</h1> }
       <span>:</span>
       <h2>Minutes</h2>
-      <h1>{minutes}</h1>
+      {minutes < 10 ? <h1>0{minutes}</h1>:<h1>{minutes}</h1>}
       <span>:</span>
       <h2>Seconds</h2>
-      <h1>{seconds}</h1>
+      {seconds < 10 ? <p>0{seconds}</p> : <p>{seconds}</p>}
+      
     </div>
   )
 }
