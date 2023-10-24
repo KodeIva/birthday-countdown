@@ -32,12 +32,21 @@ const Countdown = ({birthday}) => {
           setIsBirthday(true)
        }
       },1000)
+      return () => clearInterval(timer)
+    
     },[birthday])
   return (
-    <div>
+    <div className='flex w-full h-64 justify-center items-center bg-pink-200'>
+      <h2>Days</h2>
       <h1>{days}</h1>
+      <span>: </span>
+      <h2>Hours</h2>
       <h1>{hours}</h1>
+      <span>:</span>
+      <h2>Minutes</h2>
       <h1>{minutes}</h1>
+      <span>:</span>
+      <h2>Seconds</h2>
       <h1>{seconds}</h1>
     </div>
   )
