@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Confetti from 'react-confetti'
 
 const Countdown = ({birthday}) => {
     const[days, setDays] = useState(0)
@@ -6,6 +7,7 @@ const Countdown = ({birthday}) => {
     const[minutes, setMinutes] = useState(0)
     const[seconds, setSeconds] = useState(0)
     const[isBirthday,setIsBirthday] = useState(false)
+    const [screen, setScreen] = useState({width: window.innerWidth, height: window.innerHeight})
 
     useEffect(() => {
        
@@ -37,7 +39,20 @@ const Countdown = ({birthday}) => {
     },[birthday])
   return (
     <div className='flex w-full h-64 justify-center items-center bg-pink-200'>
-      <div className='w-28 flex flex-col justify-center items-center border-r-2 border-purple-300 text-2xl text-white  mr-2 pr-2'>
+    {isBirthday ? 
+      (<div className='flex flex-col items-center p-4'>
+      <Confetti width={screen.width} height={screen.height} numberOfPieces={250}
+                colors={['white','orangered','lightblue','lightgreen','violet','yellow']} />
+      <h1 id='happy' className='flex flex-wrap text-4xl m-3'>
+          <span className='text-blue-500 text-8xl m-3'>Happy</span>
+          <span className='text-yellow-400 text-8xl m-3'> Birthday</span>
+          <span className='text-red-500 text-8xl m-3'> Bianca</span> 
+          <span className='text-purple-500 text-8xl m-3'>!</span> 
+          <span className='text-green-500 text-8xl m-3'>!</span>
+          <span className='text-8xl m-3'>!</span>
+      </h1>
+      <br />
+      </div>):(<div><div className='w-28 flex flex-col justify-center items-center border-r-2 border-purple-300 text-2xl text-white  mr-2 pr-2'>
         <h2>Days</h2>
         {days < 10 ? <p>0{days}</p> : <p>{days}</p> }
       </div>
@@ -57,7 +72,9 @@ const Countdown = ({birthday}) => {
         {seconds < 10 ? <p>0{seconds}</p> : <p>{seconds}</p>}
       </div>
       
-      
+      </div>
+    )
+    }
     </div>
   )
 }
