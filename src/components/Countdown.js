@@ -38,7 +38,7 @@ const Countdown = ({birthday}) => {
     
     },[birthday])
   return (
-    <div className='flex w-full h-64 justify-center items-center bg-pink-200'>
+    <div className='flex shadow-2xl w-auto h-64 justify-center items-center bg-pink-200'>
     {isBirthday ? 
       (<div className='flex flex-col items-center p-4'>
       <Confetti width={screen.width} height={screen.height} numberOfPieces={250}
@@ -52,22 +52,23 @@ const Countdown = ({birthday}) => {
           <span className='text-8xl m-3'>!</span>
       </h1>
       <br />
-      </div>):(<div><div className='w-28 flex flex-col justify-center items-center border-r-2 border-purple-300 text-2xl text-white  mr-2 pr-2'>
+      </div>):(<div className='flex w-auto h-64 m-9 justify-center items-center bg-pink-200'>
+        <div className='w-28 m-2 shadow-2xl rounded-xl bg-pink-200 flex flex-col justify-center items-center text-2xl text-white  mr-2 pr-2'>
         <h2>Days</h2>
         {days < 10 ? <p>0{days}</p> : <p>{days}</p> }
       </div>
       
-      <div className='w-28 flex flex-col justify-center items-center border-r-2 border-purple-300 text-2xl text-white  mr-2 pr-2'>
+      <div className='w-28 m-2 shadow-2xl rounded-xl bg-pink-200 flex flex-col justify-center items-center text-2xl text-white  mr-2 pr-2'>
         <h2>Hours</h2>
         {hours < 10 ? <h1>0{hours}</h1> : <h1>{hours}</h1> }
       </div>
       
-      <div className='w-28 flex flex-col justify-center items-center border-r-2 border-purple-300 text-2xl text-white  mr-2 pr-2'>
+      <div className='w-28 m-2 shadow-2xl rounded-xl bg-pink-200 flex flex-col justify-center items-center text-2xl text-white  mr-2 pr-2'>
         <h2>Minutes</h2>
         {minutes < 10 ? <h1>0{minutes}</h1>:<h1>{minutes}</h1>}
       </div>
       
-      <div className='w-28 flex flex-col justify-center items-center border-r-2 border-purple-300 text-2xl text-white  mr-2 pr-2'>
+      <div className='w-28 m-2 shadow-2xl rounded-xl bg-pink-200 flex flex-col justify-center items-center text-2xl text-white  mr-2 pr-2'>
         <h2> Seconds</h2>
         {seconds < 10 ? <p>0{seconds}</p> : <p>{seconds}</p>}
       </div>
