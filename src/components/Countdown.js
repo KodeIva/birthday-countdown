@@ -44,14 +44,17 @@ const Countdown = ({birthday}) => {
       <Confetti width={screen.width} height={screen.height} numberOfPieces={250}
                 colors={['white','orangered','lightblue','lightgreen','violet','yellow']} />
       <h1 id='happy' className='flex flex-wrap text-4xl m-3'>
-          <span className='text-blue-500 text-8xl m-3'>Happy</span>
-          <span className='text-yellow-400 text-8xl m-3'> Birthday</span>
-          <span className='text-red-500 text-8xl m-3'> Bianca</span> 
-          <span className='text-purple-500 text-8xl m-3'>!</span> 
-          <span className='text-green-500 text-8xl m-3'>!</span>
-          <span className='text-8xl m-3'>!</span>
+          <span className='text-blue-500 text-7xl m-3'>Happy</span>
+          <span className='text-yellow-400 text-7xl m-3'> Birthday</span>
+          <span className='text-red-500 text-7xl m-3'> Bianca</span> 
+          <span className='text-purple-500 text-7xl m-3'>!</span> 
+          <span className='text-green-500 text-7xl m-3'>!</span>
+          <span className='text-7xl m-3'>!</span>
       </h1>
       <br />
+      <button
+        className='bg-pink-500 rounded-xl text-white tracking-widest w-[auto] p-3'
+      >Surprise</button>
       </div>):(<div className='flex w-[100%] h-64 m-9 justify-center items-center bg-pink-200'>
         <div className='w-28 m-2 shadow-2xl rounded-xl bg-pink-200 flex flex-col justify-center items-center text-2xl text-white  mr-2 pr-2'>
         <h2>Days</h2>
