@@ -38,7 +38,7 @@ const Countdown = ({birthday}) => {
     
     },[birthday])
   return (
-    <div className='flex shadow-2xl w-auto h-64 justify-center items-center bg-pink-200'>
+    <div className='flex shadow-2xl w-[90%] sm:w-[70%] md:w-[50%] xl:w-[35%] h-64 justify-center items-center bg-pink-200'>
     {isBirthday ? 
       (<div className='flex flex-col items-center p-4'>
       <Confetti width={screen.width} height={screen.height} numberOfPieces={250}
@@ -52,7 +52,7 @@ const Countdown = ({birthday}) => {
           <span className='text-8xl m-3'>!</span>
       </h1>
       <br />
-      </div>):(<div className='flex w-auto h-64 m-9 justify-center items-center bg-pink-200'>
+      </div>):(<div className='flex w-[100%] h-64 m-9 justify-center items-center bg-pink-200'>
         <div className='w-28 m-2 shadow-2xl rounded-xl bg-pink-200 flex flex-col justify-center items-center text-2xl text-white  mr-2 pr-2'>
         <h2>Days</h2>
         {days < 10 ? <p>0{days}</p> : <p>{days}</p> }
