@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Confetti from 'react-confetti'
+import ConfettiExplosion from 'react-confetti-explosion'
 
 const Countdown = ({birthday}) => {
     const[days, setDays] = useState(0)
@@ -8,6 +9,7 @@ const Countdown = ({birthday}) => {
     const[seconds, setSeconds] = useState(0)
     const[isBirthday,setIsBirthday] = useState(false)
     const [screen, setScreen] = useState({width: window.innerWidth, height: window.innerHeight})
+    const[isExploding, setIsExploding] = useState(false)
 
     useEffect(() => {
        
