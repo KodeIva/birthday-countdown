@@ -45,19 +45,22 @@ const Countdown = ({birthday}) => {
     
     },[birthday])
   return (
-    <div className='flex shadow-2xl w-[90%] sm:w-[70%] md:w-[50%] xl:w-[35%] h-64 justify-center items-center bg-pink-200'>
+    <div className={`flex  
+     h-64 justify-center items-center ${isBirthday ? 'bg-transperant' : 'w-[90%] lg:w-[45%]  sm:w-[70%] bg-pink-200 shadow-2xl'} `}>
     {isBirthday ? 
-      (<div className='flex flex-col items-center p-4'>
+      (<div className='flex flex-col items-center p-4  w-full'>
       <Confetti width={screen.width} height={screen.height} numberOfPieces={250}
                 colors={['white','orangered','lightblue','lightgreen','violet','yellow']} />
-      <h1 id='happy' className='flex flex-wrap text-4xl m-3'>
-          <span className='text-blue-500 text-7xl m-3'>Happy</span>
-          <span className='text-yellow-400 text-7xl m-3'> Birthday</span>
-          <span className='text-red-500 text-7xl m-3'> Bianca</span> 
-          <span className='text-purple-500 text-7xl m-3'>!</span> 
-          <span className='text-green-500 text-7xl m-3'>!</span>
-          <span className='text-7xl m-3'>!</span>
+      <div className="flex justify-center items-center ">
+      <h1 id='happy' className='flex flex-wrap mt-10 '>
+          <span className='text-blue-500 text-5xl  m-3'>Happy</span>
+          <span className='text-yellow-400 text-5xl m-3'> Birthday</span>
+          <span className='text-red-500 text-5xl m-3'> Bianca</span> 
+          <span className='text-purple-500 text-5xl m-3'>!</span> 
+          <span className='text-green-500 text-5xl m-3'>!</span>
+          <span className='text-blue-300 text-5xl m-3'>!</span>
       </h1>
+      </div>
       <br />
       <button
         className='bg-pink-500 rounded-xl text-white tracking-widest w-[auto] p-3'
